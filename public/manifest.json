@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Echo-Lingo",
+  "version": "1.0",
+  "description": "Highlight. Listen. Learn. Any text selected on any page will be read out loud.",
+  "permissions": ["activeTab", "scripting", "storage", "sidePanel"],
+  "action": {
+    "default_popup": "index.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "side_panel": {
+    "default_path": "index.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["contentScript.js"]
+    }
+  ]
+}
